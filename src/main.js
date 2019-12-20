@@ -1,21 +1,24 @@
 import Vue from 'vue';
-import {Header} from 'mint-ui';
-import 'mint-ui/lib/style.css'
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import './lib/mui/css/mui.min.css'
+
+import {Header} from 'mint-ui'
 Vue.component(Header.name,Header)
-import { Tabbar, TabItem } from 'mint-ui';
+import 'mint-ui/lib/style.min.css'
 
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
-import { TabContainer, TabContainerItem } from 'mint-ui';
 
-// Vue.component(TabContainer.name, TabContainer);
-// Vue.component(TabContainerItem.name, TabContainerItem);
-
+import router from './router.js'
 import App from './App.vue';
 
 
 
 new Vue({
   el: '#app',
+  
   render: h => h(App),
+  router
+
 });

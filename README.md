@@ -10,5 +10,14 @@
 
 #OS：Mac OS Catalina
 
-#主流开源协议有何不同
-#https://www.jianshu.com/p/524e4b3c5147
+#error log
+
+#vue.runtime.esm.js:639 [Vue warn]: Unknown custom element: <router-view> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+
+#fixed issue
+
+#main.js
+
+#import VueRouter from 'vue-router'
+
+#Vue.use(VueRouter)
