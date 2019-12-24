@@ -1,19 +1,20 @@
 import VueRouter from 'vue-router'
-
+//导入对应的路由组件
 import Home from './components/tabbar/Home.vue'
 import Member from './components/tabbar/Member.vue'
 import Shopcar from './components/tabbar/Shopcar.vue'
 import Search from './components/tabbar/Search.vue'
-
+//创建路由对象
 var router = new VueRouter({
     routes:[
+        {path:'/',redirect:'/home'},
         {path:'/home',component:Home},
         {path:'/member',component:Member},
         {path:'/shopcar',component:Shopcar},
         {path:'/search',component:Search},
 
     ],
-    linkActiveClass:'mui-active'
+    linkActiveClass:'mui-active'//替换默认的路由高亮类router-link-active
 })
-
+//把路由对象暴露出去
 export default router
