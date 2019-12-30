@@ -3,7 +3,12 @@
     <!-- header -->
     <mt-header fixed title="Vue 项目"></mt-header>
     <!-- container -->
-    <router-view></router-view>
+	<!-- <transition name="fade">
+		<router-view></router-view>
+	</transition> -->
+    <transition>
+		<router-view></router-view>
+	</transition>
     <!-- tabbar -->
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
@@ -28,5 +33,14 @@
 <script>
 </script>
 <style scoped>
-.app-container{padding-top: 40px}
+.app-container{padding-top: 40px;overflow-x: hidden}
+/* style for fade */
+.fade-enter,
+.fade-leave-to{opacity: 0;transform: translateX(100%)}
+.fade-enter-active{transition: all .5s;}
+/* style for default */
+.v-enter,
+.v-leave-to{opacity: 0;transform: translateX(100%)}
+.v-enter-active{transition: all .5s;}
+
 </style>
