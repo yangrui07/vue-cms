@@ -14,8 +14,14 @@ module.exports = {
       { test: /\.js$/, use: 'babel-loader' },
       { test: /\.vue$/, use: 'vue-loader' },
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
-      { test: /\.s[ac]ss$/i, use: ['vue-style-loader', 'css-loader','sass-loader'] },
-      { test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, use: 'url-loader' },
+      { test: /\.s[ac]ss$/i, use: ['vue-style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: { esModule: false }
+        }]
+      },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
         use: 'url-loader'

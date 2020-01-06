@@ -59,3 +59,13 @@
 # Method2: 使用this.$http.jsonp('...',{credentials:true})
 
 # 九宫格样式
+
+# 新闻资讯 路由链接
+
+# 展示新闻资讯列表 MUI中的media-list.html
+# 使用vue-resource获取数据
+# Issue:'src' of img tag become src="[object Module]" in browser
+# Fixed:
+# Workaround: set the esModule option in url-loader to false.
+
+# It's because in @vue/component-compiler-utils we transformed the asset urls to require statements, which expect CommonJS modules, while the recent major release of url-loader emits ES modules by default.
