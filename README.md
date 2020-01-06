@@ -1,4 +1,4 @@
-# Build Vue project based on Webpack 4.0
+#Build Vue project based on Webpack 4.0
 
 # vue version:2.6.11
 
@@ -69,3 +69,6 @@
 # Workaround: set the esModule option in url-loader to false.
 
 # It's because in @vue/component-compiler-utils we transformed the asset urls to require statements, which expect CommonJS modules, while the recent major release of url-loader emits ES modules by default.
+
+# 使用Moment插件格式化日期 YYYY-MM-DD HH:mm:ss 
+# 全局过滤器Vue.filter()

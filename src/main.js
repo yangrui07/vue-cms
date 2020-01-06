@@ -7,6 +7,12 @@ Vue.use(VueRouter)
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
+//日期格式化插件
+import moment from 'moment'
+Vue.filter('dateFormat',function(dataStr,pattern){
+  return moment(dataStr).format(pattern)
+})
+
 
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
