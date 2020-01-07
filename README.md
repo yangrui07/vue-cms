@@ -45,3 +45,11 @@ It's because in @vue/component-compiler-utils we transformed the asset urls to r
 1. 把列表中的每一项改造为router-link且提供唯一ID
 2. Create NewsInfo.vue
 3. 路由模块中，将新闻详情的路由地址和组件页面对应起来
+
+##### 单独封装一个评论子组件 comment.vue
+1. Create `comment.vue`
+2. 按需导入此组件 `import comment from './comment.vue'`
+3. 在父组件中，使用components属性，将comment组件注册为自己的子组件
+4. 将注册的子组件以标签形式在页面中引用即可
+
+##### 获取所有评论的数据加载到页面中

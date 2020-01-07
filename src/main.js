@@ -18,8 +18,9 @@ import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
 
-import {Header} from 'mint-ui'
+import {Header, Button} from 'mint-ui'
 Vue.component(Header.name,Header)
+Vue.component(Button.name,Button)
 import 'mint-ui/lib/style.min.css'
 
 import {Swipe, SwipeItem} from 'mint-ui'
