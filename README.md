@@ -1,9 +1,9 @@
 #### Build Vue project based on Webpack 4.0
-1. vue version:2.6.11
-2. webpack:4.41.4
-3. UI：Mint-UI/MUI
-4. DEV TOOL：Visual Studio Code
-5. OS：Mac OS Catalina
+1. Vue version: 2.6.11
+2. Webpack: 4.41.4
+3. UI: Mint-UI/MUI
+4. Dev tool: Visual Studio Code
+5. OS: Mac OS Catalina
 
 #### 制作首页App组件
 1. Header：使用Mint-UI中的Header组件
@@ -17,9 +17,9 @@
  4. 挂载路由到Vue Dom实例上 new Vue({el:'#app',render:c=>c(App),router})
  5. 路由配置 <router-link></router-link> <router-view></router-view>
 
-#### error log
+#### Error log
     vue.runtime.esm.js:639 [Vue warn]: Unknown custom element: <router-view> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
-#### fixed issue
+#### Fixed issue
  1. 在main.js中import VueRouter from 'vue-router'
  2. Vue.use(VueRouter)
 
@@ -40,3 +40,8 @@ It's because in @vue/component-compiler-utils we transformed the asset urls to r
 
 ##### 使用Moment插件格式化日期  
 1. 设置全局过滤器 Vue.filter(dateStr,pattern)
+
+##### 实现新闻资讯列表，点击跳转到新闻详情
+1. 把列表中的每一项改造为router-link且提供唯一ID
+2. Create NewsInfo.vue
+3. 路由模块中，将新闻详情的路由地址和组件页面对应起来

@@ -2,54 +2,45 @@
   <div>
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newsList" :key="item.id">
-        <a href="javascript:;">
+        <router-link :to="'/home/newsinfo/'+ item.id">
           <img class="mui-media-object mui-pull-left" :src="item.image_url" />
           <div class="mui-media-body">
-            {{item.title}}
-            <p class="mui-ellipsis">{{item.desc}}<small class="mui-pull-right">发布时间: {{item.date | dateFormat('YYYY-MM-DD HH:mm:ss')}}</small>
-            
+            <p class="mui-ellipsis">{{item.desc}}</p> 
+            <p><small class="mui-pull-left">发布时间: {{item.add_time | dateFormat('YYYY-MM-DD HH:mm:ss')}}</small>
+            <small class="mui-pull-right">点击:{{item.clicked}}次</small>
             </p>
           </div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
 </template>
 <script>
+import {Toast} from 'mint-ui'
 export default {
   data(){
     return {
-      newsList:[
-        {
-          id:0,
-          image_url:"https://avatars2.githubusercontent.com/u/16751198?s=40&v=4",
-          title:"幸福",
-          desc:"能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？",
-          date:new Date()
-        },
-        {
-          id:1,
-          image_url:"https://avatars2.githubusercontent.com/u/16751198?s=40&v=4",
-          title:"木屋",
-          desc:"想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.",
-          date:new Date()
-        },
-        {
-          id:2,
-          image_url:"https://avatars2.githubusercontent.com/u/16751198?s=40&v=4",
-          title:"幸福",
-          desc:"烤炉模式的城，到黄昏，如同打翻的调色盘一般.",
-          date:new Date()
-        },
-      ]
+      newsList:[],
+    }
+  },
+  created(){
+    this.getNewsList()
+  },
+  methods:{
+    getNewsList(){
+      this.$http.get('./src/json/newslist.json').then(result => {
+        if(result.status === 200){
+          this.newsList = result.body;
+        }else{
+          Toast('请求失败')
+        }
         
-
-      
+      })
       
     }
   }
 }
 </script>
 <style scoped>
-
+small{color: #26a2ff}
 </style>
