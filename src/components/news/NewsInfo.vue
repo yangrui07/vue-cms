@@ -6,7 +6,7 @@
       <span>点击{{ newsInfo.clicked }}次</span>
     </p>
     <div class="desc" v-html="newsInfo.desc"></div>
-    <comment-box></comment-box>
+    <comment-box :id="this.id"></comment-box>
   </div>
 </template>
 <script>

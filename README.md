@@ -53,3 +53,5 @@ It's because in @vue/component-compiler-utils we transformed the asset urls to r
 4. 将注册的子组件以标签形式在页面中引用即可
 
 ##### 获取所有评论的数据加载到页面中
+1. 在用标签引用子组件时绑定父组件ID
+2. 在子组件中通过props属性获取父组件ID
