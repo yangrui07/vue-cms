@@ -17,15 +17,20 @@ Vue.filter('dateFormat',function(dataStr,pattern){
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
-
-import {Header, Button} from 'mint-ui'
-Vue.component(Header.name,Header)
-Vue.component(Button.name,Button)
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
 import 'mint-ui/lib/style.min.css'
 
-import {Swipe, SwipeItem} from 'mint-ui'
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
+// import {Header, Button} from 'mint-ui'
+// Vue.component(Header.name,Header)
+// Vue.component(Button.name,Button)
+// import 'mint-ui/lib/style.min.css'
+
+// import {Swipe, SwipeItem, Lazyload} from 'mint-ui'
+// Vue.component(Swipe.name, Swipe)
+// Vue.component(SwipeItem.name, SwipeItem)
+// Vue.use(Lazyload)
+
 
 //1.2 导入自己的路由模块
 import router from './router.js'

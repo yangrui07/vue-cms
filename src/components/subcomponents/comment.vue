@@ -1,6 +1,6 @@
 <template>
   <div class="cmt-container">
-    <h3>发表评论 -- {{ this.id }}</h3>
+    <h3>发表评论</h3>
     <textarea placeholder="请输入您的评论（最多120个字）" maxlength="120"></textarea>
     <button class="mint-button mint-button--primary mint-button--large">
       <label class="mint-button-text">发表评论</label>

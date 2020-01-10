@@ -55,3 +55,14 @@ It's because in @vue/component-compiler-utils we transformed the asset urls to r
 ##### 获取所有评论的数据加载到页面中
 1. 在用标签引用子组件时绑定父组件ID
 2. 在子组件中通过props属性获取父组件ID
+
+##### 发表评论
+1. 把文本框做双向数据绑定
+2. 为发表评论绑定一个事件
+3. 校验评论内容是否为空
+4. 通过vue-resource发送请求，将评论保存到服务器中
+5. 点击发表评论后，在客户端，手动拼接出一个最新的评论对象，然后调用数组的unshift方法，将最新的评论追加到comments前面
+
+#### 图片分享
+1. 顶部使用MUI中的scroll组件
+2. 渲染分类列表的数据
