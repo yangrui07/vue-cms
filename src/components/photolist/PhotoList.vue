@@ -8,15 +8,15 @@
         <div class="mui-scroll">
           <a
             :class="['mui-control-item',item.id == 0 ? 'mui-active' : '']"
-            v-for="item in list"
+            v-for="item in cateList"
             :key="item.id"
+            @click="showCate(item.id)"
           >{{item.title}}</a>
         </div>
-        <ul class="photo-list" v-for="item in list" :key="item.id">
-          <li v-for="subitem in item.cate_list" :key="subitem.id">
-            <img v-lazy="subitem.image_url" :key="subitem.id" />
-            <img :src="item.image_url" />
-            <p>{{ subitem.desc }}</p>
+        <ul class="photo-list">
+          <li v-for="item in photoList" :key="item.id">
+            <img v-lazy="item.image_url" :key="item.id" />
+            <p class="desc">{{ item.desc }}</p>
           </li>
         </ul>
       </div>
@@ -29,10 +29,12 @@ import mui from "../../lib/mui/js/mui.min.js";
 export default {
   data() {
     return {
-      list: ""
+      cateList: "",
+      photoList:""
     };
   },
   created() {
+    this.getCateList();
     this.getPhotoList();
   },
   mounted() {
@@ -44,10 +46,24 @@ export default {
     });
   },
   methods: {
-    getPhotoList() {
+    getCateList() {
       this.$http.get("../../src/json/photolist.json").then(result => {
         if (result.status === 200) {
-          this.list = result.body;
+          this.cateList = result.body;
+        }
+      });
+    },
+    getPhotoList(){
+      this.$http.get("../../src/json/photolist.json").then(result => {
+        if (result.status === 200) {
+          this.photoList = result.body[0]['cate_list'];
+        }
+      });
+    },
+    showCate(id){
+      this.$http.get("../../src/json/photolist.json").then(result => {
+        if (result.status === 200) {
+          this.photoList = result.body[id]['cate_list'];
         }
       });
     }
@@ -65,7 +81,28 @@ img[lazy="loading"] {
   padding: 0;
   margin: 40px 0;
   li{
-    width: 100%
+    width: 96%;margin: 5px 2%;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    img{
+      width: 100%;
+      height: 230px;
+      background-size: cover;
+      border: 0;
+      vertical-align: middle;
+    }
+    .desc{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      background:rgba(0,0,0,.65);
+      color: #fff;
+      margin: 0;
+      padding: 2px;
+      font-size: 12px
+    }
   }
 }
 }

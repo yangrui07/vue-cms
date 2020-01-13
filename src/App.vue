@@ -33,7 +33,7 @@
 <script>
 </script>
 <style scoped>
-.app-container{padding-top: 40px;overflow-x: hidden}
+.app-container{padding: 40px 0;overflow-x: hidden}
 /* style for fade */
 .fade-enter,
 .fade-leave-to{opacity: 0;transform: translateX(100%)}
@@ -42,5 +42,5 @@
 .v-enter,
 .v-leave-to{opacity: 0;transform: translateX(100%)}
 .v-enter-active{transition: all .5s;}
-
+.mint-header.is-fixed{z-index: 99;}
 </style>
