@@ -31,7 +31,6 @@ import 'mint-ui/lib/style.min.css'
 // Vue.component(SwipeItem.name, SwipeItem)
 // Vue.use(Lazyload)
 
-
 //1.2 导入自己的路由模块
 import router from './router.js'
 import App from './App.vue';

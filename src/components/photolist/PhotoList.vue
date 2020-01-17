@@ -72,11 +72,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container{
-img[lazy="loading"] {
-  width: 40px;
-  height: 300px;
-  margin: auto;
-}
+
 .photo-list{
   padding: 0;
   margin: 40px 0;
@@ -85,12 +81,19 @@ img[lazy="loading"] {
     position: relative;
     border: 1px solid #ccc;
     border-radius: 3px;
+    background-color: #f7f7f7;
     img{
       width: 100%;
       height: 230px;
       background-size: cover;
+      background-position: center center;
       border: 0;
       vertical-align: middle;
+    }
+    img[lazy="loading"]{
+      width: 40px;
+      height: 230px;
+      margin: auto;
     }
     .desc{
       position: absolute;
@@ -105,6 +108,7 @@ img[lazy="loading"] {
     }
   }
 }
+
 }
 
 </style>
