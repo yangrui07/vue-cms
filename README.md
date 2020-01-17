@@ -69,9 +69,19 @@ It's because in @vue/component-compiler-utils we transformed the asset urls to r
 
 ##### Image Issue
 1. 使用懒加载情况下，若前台页面没有加载出图片，控制台也没有报错，查看前台元素如下：
+
 `<img data-v-0f3f4df1="" data-src="undefined" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="error">`
 2. 出现此问题是因为在前台获取数据，使用的属性与后台不同造成的。如后台数据属性为images_url，而前台使用image_url获取数据，这样就会获取不到图片地址。
 3. 若不使用懒加载，普通的Img标签，图片不显示，同时控制台也不报错，审查元素时也没有error提醒。
-4. 设置加载图片CSS `img[lazy="loading"]{width:40px;}`
+4. 设置加载图片CSS，需要将此代码放在li img层级中，不然不起作用
+
+`img[lazy="loading"]{width:40px;}`
+
+#### 图片详情页
+1. 将`li`改为`router-link`,并添加`tag="li"`
+2. Vue preview plugin
+3. Vue-preview循环的图片列表数据类型必须为数组，里面包含多个Object
+`list:[{src:'',w:800,h:600}]`
+其中`w h`分别代表放大后图片的宽高度
 
 

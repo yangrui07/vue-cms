@@ -26,10 +26,8 @@ import 'mint-ui/lib/style.min.css'
 // Vue.component(Button.name,Button)
 // import 'mint-ui/lib/style.min.css'
 
-// import {Swipe, SwipeItem, Lazyload} from 'mint-ui'
-// Vue.component(Swipe.name, Swipe)
-// Vue.component(SwipeItem.name, SwipeItem)
-// Vue.use(Lazyload)
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
 
 //1.2 导入自己的路由模块
 import router from './router.js'
